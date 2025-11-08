@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --allow-env --unstable-kv src/main.ts",
+    "start": "deno run --allow-net --allow-env --unstable-kv src/main.ts"
+  },
+  "imports": {
+    "oak": "https://deno.land/x/oak@v17.1.3/mod.ts"
+  }
+}
