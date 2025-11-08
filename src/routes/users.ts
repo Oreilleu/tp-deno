@@ -19,7 +19,7 @@ function sanitizeUser(user: any): UserWithoutPassword {
 
 router.post("/register", async (ctx: Context) => {
   const body = await ctx.request.body.json();
-  const { email, password, firstName, lastName } = body;
+  const { email, password, firstName, lastName, role } = body;
 
   if (!email || !password || !firstName || !lastName) {
     ctx.response.status = 400;
@@ -55,7 +55,7 @@ router.post("/register", async (ctx: Context) => {
     password: hashedPassword,
     firstName,
     lastName,
-    role: "student",
+    role: role || "student",
   });
 
   const token = await generateToken(newUser.id, newUser.role);
