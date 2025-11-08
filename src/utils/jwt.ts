@@ -1,6 +1,6 @@
 import type { JWTPayload, UserRole } from "../models/types.ts";
 
-const JWT_SECRET = Deno.env.get("JWT_SECRET");
+const JWT_SECRET = Deno.env.get("JWT_SECRET") || "dev-secret-key-change-in-production";
 const JWT_EXPIRATION = 7 * 24 * 60 * 60;
 
 function base64urlEncode(data: Uint8Array): string {
