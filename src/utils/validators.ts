@@ -5,19 +5,7 @@ export function validateEmail(email: string): boolean {
 
 export function validateISBN(isbn: string): boolean {
   const cleanISBN = isbn.replace(/[-\s]/g, "");
-
-  if (!/^(978|979)\d{10}$/.test(cleanISBN)) {
-    return false;
-  }
-
-  let sum = 0;
-  for (let i = 0; i < 12; i++) {
-    const digit = parseInt(cleanISBN[i]);
-    sum += i % 2 === 0 ? digit : digit * 3;
-  }
-  const checkDigit = (10 - (sum % 10)) % 10;
-
-  return checkDigit === parseInt(cleanISBN[12]);
+  return cleanISBN.length === 10;
 }
 
 export async function hashPassword(password: string): Promise<string> {
