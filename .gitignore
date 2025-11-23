@@ -1,0 +1,22 @@
+# Deno
+.deno/
+deno.lock
+
+# Environment variables
+.env
+
+# Database
+*.db
+*.sqlite
+kv_data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
